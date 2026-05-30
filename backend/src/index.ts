@@ -64,9 +64,3 @@ app.use(
   },
 );
 
-app.listen(env.PORT, () => {
-  console.log("Listening on port:", env.PORT);
-  if (env.NODE_ENV === "production") {
-    keepAliveCron.start();
-  }
-});
