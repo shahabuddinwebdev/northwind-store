@@ -9,9 +9,7 @@ import * as Sentry from "@sentry/node";
 
 import { clerkMiddleware } from "@clerk/express";
 import { clerkWebhookHandler } from "./webhooks/clerk";
-import { getEnv } from "./lib/env";
 
-const env = getEnv();
 const app = express();
 
 const rawJson = express.raw({ type: "application/json", limit: "1mb" });
