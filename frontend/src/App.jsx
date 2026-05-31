@@ -21,16 +21,17 @@ function App() {
 
   return (
     <Layout>
-     <Routes>
-       <Route path="/" element={<HomePage />} />
-        <Route path="/cart" element={<CartPage />} />        <Route path="/product/:slug" element={<ProductDetailPage />} />
-         <Route
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/product/:slug" element={<ProductDetailPage />} />
+        <Route
           path="/orders"
           element={isSignedIn ? <OrdersPage /> : <Navigate to={"/"} replace />}
         />
-       <Route path="/checkout/return" element={<CheckoutReturnPage />} />
+        <Route path="/checkout/return" element={<CheckoutReturnPage />} />
 
-      <Route path="/demo-sentry" element={<SentryDemoPage />} />
+        <Route path="/demo-sentry" element={<SentryDemoPage />} />
 
         <Route
           path="/orders/:id/call"

@@ -52,9 +52,9 @@ createRoot(document.getElementById("root")).render(
   </StrictMode>,
 );
 
-// // In simple terms, 'browserTracingIntegration' lets Sentry see things like:
-// // page load timing
-// // route/navigation timing
-// // slow frontend interactions
-// // outgoing fetch / API requests
-// // frontend-to-backend trace linking
+// In simple terms, 'browserTracingIntegration' lets Sentry see things like:
+// page load timing
+// route/navigation timing
+// slow frontend interactions
+// outgoing fetch / API requests
+// frontend-to-backend trace linking
