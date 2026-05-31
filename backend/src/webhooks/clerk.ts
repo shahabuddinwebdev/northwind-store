@@ -16,7 +16,7 @@ export async function clerkWebhookHandler(req: Request, res: Response) {
       return;
     }
 
-//     // Clerk's verifier expects a Web Request with the raw body; Express may give Buffer or string.
+    // Clerk's verifier expects a Web Request with the raw body; Express may give Buffer or string.
     const payload = req.body instanceof Buffer ? req.body.toString("utf8") : String(req.body);
 
     const request = new Request("http://internal/webhooks/clerk", {
@@ -25,7 +25,7 @@ export async function clerkWebhookHandler(req: Request, res: Response) {
       body: payload,
     });
 
-//     // throws if signature is wrong or body was tampered with; only then we trust evt.
+    // throws if signature is wrong or body was tampered with; only then we trust evt.
     const evt = await verifyWebhook(request, { signingSecret: env.CLERK_WEBHOOK_SECRET });
 
     if (evt.type === "user.created" || evt.type === "user.updated") {
@@ -63,7 +63,7 @@ export async function clerkWebhookHandler(req: Request, res: Response) {
 
     res.json({ ok: true });
   } catch (err) {
-//     // Bad signature, malformed payload, or DB error — do not leak details to the client.
+    // Bad signature, malformed payload, or DB error — do not leak details to the client.
     console.error("Clerk webhook error", err);
     res.status(400).json({ error: "Invalid webhook" });
   }
