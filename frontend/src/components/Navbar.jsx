@@ -9,7 +9,7 @@ import {
   SettingsIcon,
   ShoppingBagIcon,
   ShoppingCartIcon,
-  StoreIcon,
+  BriefcaseBusiness,
 } from "lucide-react";
 import { useCart } from "../store/cart";
 
@@ -35,7 +35,7 @@ const Navbar = () => {
             className="btn btn-ghost gap-2 px-2 font-mono text-lg font-semibold uppercase tracking-wide md:text-xl"
           >
             <span className="flex size-10 items-center justify-center rounded-lg bg-primary/15 p-1 text-primary">
-              <StoreIcon className="size-8" aria-hidden />
+              <BriefcaseBusiness  className="size-8" aria-hidden />
             </span>
             <span className="leading-none">My Family Website</span>
           </Link>
